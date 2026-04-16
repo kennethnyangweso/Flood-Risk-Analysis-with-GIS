@@ -127,6 +127,10 @@ This project aims to:
 
 * Kenya Towns dataset
 
+## Spatial view of the dataset
+
+<img width="1020" height="1143" alt="image" src="https://github.com/user-attachments/assets/f1ad7bc1-b5b6-4944-b287-3d252182289b" />
+
 ---
 
 ## 🧹 Data Cleaning & Feature Engineering

@@ -285,6 +285,27 @@ Classification Model Performance
 
 ---
 
+### Best Model Results:
+
+#### **Classification (Stacked Ensemble Model)**
+
+<img width="649" height="547" alt="image" src="https://github.com/user-attachments/assets/6c8d3988-f978-4ead-bbf0-934d3e79a7f8" />
+
+##### **Observations for Confusion Matrix - Stacked Ensemble Model:**  
+- Superior Safety Margin: Only 8 actual High Risk areas were misclassified as Low Risk. This is the lowest "critical failure" rate of all the models you've evaluated, making it the safest choice for disaster planning.
+- Extremely Low "False Alarm" Rate: Only 27 High Risk predictions were actually Low Risk. This high precision ensures that when you call for an evacuation or structural reinforcement, the data strongly supports it.
+- Moderate Risk "Buffer": The most frequent errors are still between Moderate and Low Risk (176 and 123). This confirms that "Moderate" continues to act as a statistical middle ground between the clear extremes of high and low.
+- High True Positive Counts: The primary diagonal (983, 773, 620) shows the highest volume of correct hits across the entire analysis.
+
+<img width="1123" height="547" alt="image" src="https://github.com/user-attachments/assets/0b152ba9-6266-4fd0-8b24-133f84c18920" />
+
+##### **Observations for Feature Importance - Stacked Ensemble Model:**  
+- The "Hazard" Heavyweight: topographic_hazard is the overwhelming driver for the XGBoost component (green), accounting for over 80% of its logic. This ensures the model is highly sensitive to dangerous terrain shapes.
+- The "Physicality" Anchor: Random Forest (blue) provides the necessary balance by prioritizing raw physical geography: elevation_m, dist_to_water_m, and dist_to_town_m.
+- Complementary Strengths: Notice how the blue and green bars often don't overlap. Where XGBoost ignores physical distance, Random Forest captures it; where Random Forest is less certain about topographic hazard, XGBoost anchors it.
+- Minimal Variables: town_size and water_proximity_risk contribute almost nothing to either model, suggesting they can be safely excluded from future iterations.
+
+
 ## 🚀 Deployment
 
 The model was deployed using **Flask** (`app.py`), allowing users to:

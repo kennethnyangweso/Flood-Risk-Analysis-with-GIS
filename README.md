@@ -138,11 +138,13 @@ Key steps included:
 
   * Distance to nearest town
   * Distance to water bodies
+
 * Engineering **risk-based features**:
 
   * Landcover risk
   * Water proximity risk
   * Topographic hazard
+
 * Generating:
 
   * `flood_risk_score` (regression target)
@@ -224,11 +226,35 @@ Moderate Risk is the smallest: This category accounts for 30.9% of the total fre
 * Voting Classifier
 * Stacking Classifier (**Best Performing Model**)
 
-#### Evaluation
+### Evaluation
 
 * Accuracy
 * F1 Score
 * Confusion Matrix
+
+#### Results 
+
+Classification Model Performance
+
+| Model                          | Accuracy (%) | F1 Score (%) |
+|--------------------------------|-------------|--------------|
+| Random Forest Classifier       | 81.07       | 80.93        |
+| XGBoost Classifier             | 80.97       | 80.86        |
+| Ensemble Voting Classifier     | 81.31       | 81.17        |
+| **Ensemble Stacking Classifier** | **81.93**   | **81.84**    |
+
+---
+
+🔍 Insights
+
+
+- The **Ensemble Stacking Classifier** achieved the best performance, indicating that combining multiple models in a hierarchical manner improves predictive power.
+- Both **Random Forest** and **XGBoost** performed similarly, showing strong baseline performance for tree-based models.
+- The **Voting Classifier** provided a slight improvement over individual models, but not as significant as stacking.
+- The close performance across models suggests that the dataset is well-structured, and further gains may come from feature engineering rather than model complexity.
+- The consistency between **Accuracy** and **F1 Score** indicates a balanced model performance across classes.
+
+
 
 ---
 
@@ -249,6 +275,13 @@ Moderate Risk is the smallest: This category accounts for 30.9% of the total fre
 * MAE
 * MSE
 * Residual Plots
+
+| Model                          | R-Squared (%) | MAE        | MSE  |     
+|--------------------------------|-------------|--------------|----------|
+| Random Forest Regressor   | 71       | 0.31                 |   0.24   |
+| XGBoost Regressor              | 70     |  0.32      |    0.25  |
+| Tuned  Random Forest Regressor | 72      | 0.31        |  0.23    |
+| Tuned XGBoost Regressor        | 71   | 0.32   |     0.24 |
 
 ---
 

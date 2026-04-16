@@ -280,7 +280,7 @@ Classification Model Performance
 |--------------------------------|-------------|--------------|----------|
 | Random Forest Regressor   | 71       | 0.31                 |   0.24   |
 | XGBoost Regressor              | 70     |  0.32      |    0.25  |
-| Tuned  Random Forest Regressor | 72      | 0.31        |  0.23    |
+| **Tuned  Random Forest Regressor** | **72**      | **0.31**        |  **0.23**    |
 | Tuned XGBoost Regressor        | 71   | 0.32   |     0.24 |
 
 ---
@@ -304,6 +304,30 @@ Classification Model Performance
 - The "Physicality" Anchor: Random Forest (blue) provides the necessary balance by prioritizing raw physical geography: elevation_m, dist_to_water_m, and dist_to_town_m.
 - Complementary Strengths: Notice how the blue and green bars often don't overlap. Where XGBoost ignores physical distance, Random Forest captures it; where Random Forest is less certain about topographic hazard, XGBoost anchors it.
 - Minimal Variables: town_size and water_proximity_risk contribute almost nothing to either model, suggesting they can be safely excluded from future iterations.
+
+#### **Regression**
+
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/a0d6d2d3-df9e-4e24-a752-6541f8f244d6" />
+
+##### **Observations for Scatter Plot - Random Forest Regressor (Actual vs Predicted):**  
+
+- Strong Positive Linear Correlation: The data points cluster tightly around the dashed red line (the "Identity Line"), indicating that the model's predictions closely track the real-world values across the entire range.
+- Vertical Banding: The data is organized in distinct vertical columns at specific "Actual Values" (e.g., at 0.4, 0.8, 1.4, 3.2, 3.7). This confirms that your target variable is derived from weighted categories or specific thresholds.
+- Central Tightness: The model is most accurate in the 0.5 to 3.5 range. This is where the majority of your "Towns" and "Rangelands" sit, making the model highly reliable for the bulk of your study area.
+- Under-prediction at the Top: For the most extreme actual values (
+), the blue dots fall below the red line. This means the model tends to be slightly conservative, under-predicting the absolute worst flood scenarios.
+
+<img width="968" height="547" alt="image" src="https://github.com/user-attachments/assets/6f44f2ce-ecd7-4d05-81c8-3af2d1bc0c99" />
+
+##### **Observations for Feature Importance - Random Forest Regressor:**  
+
+- The Primary Driver: elevation_m is the overwhelming dominant feature, with a score exceeding 0.45. This confirms that in your model, vertical height is the single most important factor for predicting flood intensity.
+- The Secondary Tier: Three features share a similar level of importance (between ~0.13 and ~0.17):
+   - dist_to_water_m
+   - topographic_hazard
+   - dist_to_town_m
+- Low Impact Features: county and vulnerability_score provide very little predictive power (<0.05>).
+- Non-Factors: town_size and water_proximity_risk have scores of zero, meaning they do not contribute to the model's decisions at all.
 
 
 ## 🚀 Deployment

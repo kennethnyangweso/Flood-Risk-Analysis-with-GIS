@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/a88b0163-d5fc-4848-8da9-f7f6bdcfc08c" />
 
 # 🌍 Flood Risk Prediction System (Kenya)
 
@@ -374,6 +375,22 @@ Flood-Risk-Prediction/
 * **Best Regression Model:** Random Forest Regressor
 * Hyperparameter tuning improved model performance
 * Regression provides detailed scoring, while classification improves interpretability
+
+### Deployment Results
+
+** Classification link**
+https://screenrec.com/share/OpF3AGSo9h
+
+<img width="1366" height="768" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/6bf4a757-856e-4365-9741-170856848d42" />
+
+<img width="1366" height="768" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/4586ef0f-2088-49b1-8ee8-d3eb478cd263" />
+
+https://screenrec.com/share/n1LU8S2Cev
+
+<img width="1366" height="768" alt="Screenshot (52)" src="https://github.com/user-attachments/assets/915fb0da-d5bb-443e-8b73-00546cc31d80" />
+
+<img width="1366" height="768" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/82578703-6614-4bbd-8a7b-8ab27915d14c" />
+
 
 ---
 

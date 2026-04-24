@@ -378,12 +378,15 @@ Flood-Risk-Prediction/
 
 ### Deployment Results
 
-** Classification link**
+**Classification link**
+
 https://screenrec.com/share/OpF3AGSo9h
 
 <img width="1366" height="768" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/6bf4a757-856e-4365-9741-170856848d42" />
 
 <img width="1366" height="768" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/4586ef0f-2088-49b1-8ee8-d3eb478cd263" />
+
+**Regression link**
 
 https://screenrec.com/share/n1LU8S2Cev
 
